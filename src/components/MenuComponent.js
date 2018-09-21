@@ -6,25 +6,21 @@ class Menu extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            dishdetail: <Dishdetail dish={null} />,
+            selectedDish: null,
         };
-        this.onDishSelect = this.onDishSelect.bind(this);
-        console.log('Menu Component constructor method called.');
     }
 
     onDishSelect(dish) {
-        this.state.dishdetail.setState({selectedDish: dish});
-       console.log("onDishSelect called.");
-    }
-
-    componentDidMount() {
-        console.log('Menu Component componentDidMount() method called.');
+        this.setState({selectedDish: dish});
     }
 
     renderDish(dish){
         console.log("renderDish called from Menu.");
+        console.log(this.state.selectedDish);
         return (
-            <Card>{this.state.dishdetail}</Card>
+            <Card>
+              <Dishdetail dish={this.state.selectedDish} />
+            </Card>
         );
     }
 
