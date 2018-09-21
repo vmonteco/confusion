@@ -12,7 +12,7 @@ export const DISHES =
             {
             id: 0,
             rating: 5,
-            comment: "Imagine all the eatables, living in conFusion!",
+            comment: "Imagine all the eatables, living in conFusion! Foo",
             author: "John Lemon",
             date: "2012-10-16T17:57:28.556094Z"
             },
@@ -181,6 +181,17 @@ export const DISHES =
             author: "25 Cent",
             date: "2011-12-02T17:57:28.556094Z"
             }
+        ]
+        },
+        {
+        id: 4,
+        name:'ElaiCheese Cake',
+        image: 'assets/images/elaicheesecake.png',
+        category: 'dessert',
+        label:'',
+        price:'2.99',
+        description:'A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms',
+        comments: [
         ]
         }
     ];
