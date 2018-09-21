@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
+import Dishdetail from './DishdetailComponent';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
 
 class Menu extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedDish: null,
+            dishdetail: <Dishdetail dish={null} />,
         };
+        this.onDishSelect = this.onDishSelect.bind(this);
         console.log('Menu Component constructor method called.');
     }
 
     onDishSelect(dish) {
-        this.setState({selectedDish: dish});
+        this.state.dishdetail.setState({selectedDish: dish});
+       console.log("onDishSelect called.");
     }
 
     componentDidMount() {
@@ -19,21 +22,10 @@ class Menu extends Component {
     }
 
     renderDish(dish){
-        if (dish != null) {
-            return (
-                <Card>
-                <CardImg width="100%" src={dish.image} alt={dish.name}/>
-                <CardBody>
-                <CardTitle>{dish.name}</CardTitle>
-                <CardText>{dish.description}</CardText>
-                </CardBody>
-                </Card>
-            );
-        }else{
-            return (
-                <div></div>
-            );
-        }
+        console.log("renderDish called from Menu.");
+        return (
+            <Card>{this.state.dishdetail}</Card>
+        );
     }
 
     render() {
